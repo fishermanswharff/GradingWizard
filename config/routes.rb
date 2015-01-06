@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  root 'repos#index'
+  resources :repos
+  post '/reports', to: 'reports#nomnom'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

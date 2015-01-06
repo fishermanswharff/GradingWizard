@@ -15,7 +15,8 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem "faker"
   gem "codeclimate-test-reporter", require: nil
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'web-console', '~> 2.0.0.beta4'
   gem 'spring'
 end
