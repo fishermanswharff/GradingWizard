@@ -12,3 +12,4 @@
 /tmp
 .project
 docs/
+config/env.yml

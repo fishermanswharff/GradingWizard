@@ -9,6 +9,7 @@ gem 'jquery-rails', '~> 4.0.0.beta2'
 gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'newrelic_rpm'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
