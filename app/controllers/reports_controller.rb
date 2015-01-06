@@ -4,8 +4,8 @@ class ReportsController < ApplicationController
   end
 
   def nomnom
+    binding.pry
     payload = JSON.parse(params[:payload])
-    
   end
 
   def create
