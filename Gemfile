@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.2.0"
 gem 'rails', '4.2.0.beta2'
 gem 'pg'
 gem 'sass-rails', '~> 5.0.0.beta1'
@@ -9,7 +10,10 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.1.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem "faker"
+  gem "codeclimate-test-reporter", require: nil
   gem 'byebug'
   gem 'web-console', '~> 2.0.0.beta4'
   gem 'spring'
