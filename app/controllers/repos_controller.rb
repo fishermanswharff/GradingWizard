@@ -2,8 +2,10 @@ require Rails.root.join('lib/modules/RepoGetter')
 class ReposController < ApplicationController
 
   def index
-    @repos = RepoGetter::Get::get_repos('https://api.github.com/orgs/ga-wdi-boston/repos?per_page=100')
-    @repos = JSON.parse(@repos.body)
+    Rails.cache.fetch([:ga_repos,self], expires_in: 5.minutes) do
+      @repos = RepoGetter::Get::get_repos('https://api.github.com/orgs/ga-wdi-boston/repos?per_page=100')
+      @repos = JSON.parse(@repos.body)
+    end
   end
 
   def create
