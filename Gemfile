@@ -13,6 +13,7 @@ gem 'rack-cors'
 gem 'redis-rails'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
+gem "octokit", "~> 3.0"
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
