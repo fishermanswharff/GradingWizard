@@ -2,8 +2,6 @@
 <% @repos.each do |repo| %>
   <div class="repo">
     <h2><%= repo['name'] %></h2>
-    <p><%= link_to repo['html_url'], repo['html_url'] %> | fork: <%= repo['fork'] %></p>
+    <p><%= link_to repo['html_url'], repo['html_url'] %> | fork: <%= repo['fork'] %> | forks count: <%= repo['forks_count']%> | default branch: <%= repo['default_branch'] %> </p>
   </div>
-  
-
 <% end %>
