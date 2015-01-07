@@ -1,0 +1,7 @@
+<% @pull_requests.each do |pr| %>
+  <div>
+    <h1><%= pr.name %></h1>
+    <h2><%= pr.committer_name%></h2>
+    <p><%= link_to pr.build_status == 0 ? "Passing!" : "Failing", pr.build_url %></p>
+  </div>
+<% end %>

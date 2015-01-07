@@ -7,18 +7,11 @@ class TravisController < ApplicationController
     else
       payload = JSON.parse(params[:payload])
       url = "https://github.com/" + repo_slug
-
-
-      binding.byebug
-
-      # if payload['type'] == 'push' && Repo.where(name: env['HTTP_TRAVIS_REPO_SLUG'])[0] == nil 
-      #   Repo.create!({name: env['HTTP_TRAVIS_REPO_SLUG'], url: payload['repository']['url']})
-      # end
-      # payload['type'] == 'push' #=> this is a push on the root repository
-      # payload['type'] == 'pull_request' #=> this is a forked pull request
-      # Repo.create!({name: env['HTTP_TRAVIS_REPO_SLUG'], url: payload['repository']['url']})
-      puts "Received valid payload for repository #{repo_slug}"
+      if payload['type'] == 'pull_request'
+        PullRequest.create!({committer_name: payload['committer_name'], unique_id: payload['id'], name: env['HTTP_TRAVIS_REPO_SLUG'], build_status: payload['status'], status_message: payload['status_message'], build_url: payload['build_url'], commit_message: payload['message'], pull_request_number: payload['pull_request_number']})
+      end
     end
+    render nothing: true
   end
 
   private
@@ -45,7 +38,7 @@ pull_request model:
   t.string :build_url (payload['build_url'])
   t.string :commit_message (payload['message'])
   t.integer :pull_request_number (payload['pull_request_number'])
-  
+
 {
   "id"=>46232633, 
   "repository"=>
@@ -117,12 +110,4 @@ pull_request model:
   "type"=>"pull_request", 
   "pull_request_number"=>1
 }
-
-
-
-
-
-
-
 =end
-

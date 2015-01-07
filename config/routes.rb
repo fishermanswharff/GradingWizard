@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :repos
-  resources :pull_requests
   
   root 'repos#index'
   match '/travisreports' => 'travis#nomnom', via: [:post]
+
+  resources :repos
+  resources :pull_requests
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
