@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :reports
   
   root 'repos#index'
-  match '/travisreports' => 'router#nomnom', via: [:post]
+  match '/travisreports' => 'travis#nomnom', via: [:post]
 
   
   

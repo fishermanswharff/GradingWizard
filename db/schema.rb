@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106191334) do
+ActiveRecord::Schema.define(version: 20150106190142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "reports", force: :cascade do |t|
-    t.string   "payload"
-    t.integer  "repo_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "reports", ["repo_id"], name: "index_reports_on_repo_id", using: :btree
 
   create_table "repos", force: :cascade do |t|
     t.string   "name"
