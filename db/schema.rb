@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106190142) do
+ActiveRecord::Schema.define(version: 20150107203203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "pull_requests", force: :cascade do |t|
+    t.integer  "unique_id"
+    t.string   "name"
+    t.integer  "build_status"
+    t.string   "status_message"
+    t.string   "build_url"
+    t.string   "commit_message"
+    t.integer  "pull_request_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "repos", force: :cascade do |t|
     t.string   "name"
