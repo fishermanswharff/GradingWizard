@@ -2,6 +2,6 @@
   <div>
     <h1><%= pr.name %></h1>
     <h2><%= pr.committer_name%></h2>
-    <p><%= link_to pr.build_status == 0 ? "Passing!" : "Failing", pr.build_url %></p>
+    <p><%= link_to pr.build_status == 0 ? "Passing!" : "Failing", pr.build_url %> | Status message: <%= pr.status_message %> | Commit message: <%= pr.commit_message %> | Pull Request Number: <%= pr.pull_request_number %></p>
   </div>
 <% end %>
