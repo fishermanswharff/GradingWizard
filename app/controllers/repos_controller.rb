@@ -2,7 +2,8 @@ require Rails.root.join('lib/modules/RepoGetter')
 class ReposController < ApplicationController
 
   def index
-    @response = RepoGetter::Get::get_repos('https://api.github.com/orgs/ga-wdi-boston/repos')
+    @repos = RepoGetter::Get::get_repos('https://api.github.com/orgs/ga-wdi-boston/repos')
+    @repos = JSON.parse(@repos.body)
   end
 
   def create

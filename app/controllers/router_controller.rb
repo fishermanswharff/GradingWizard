@@ -7,8 +7,7 @@ class RouterController < ApplicationController
     else
       payload = JSON.parse(params[:payload])
       url = "https://github.com/" + repo_slug
-      
-      binding.byebug
+
       # if payload['type'] == 'push' && Repo.where(name: env['HTTP_TRAVIS_REPO_SLUG'])[0] == nil 
       #   Repo.create!({name: env['HTTP_TRAVIS_REPO_SLUG'], url: payload['repository']['url']})
       # end

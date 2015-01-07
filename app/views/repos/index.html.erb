@@ -1,5 +1,9 @@
 <h1>All of the repos</h1>
 <% @repos.each do |repo| %>
-  <%= repo.name %>
-  <%= link_to repo.url, repo.url %>
+  <div class="repo">
+    <h2><%= repo['name'] %></h2>
+    <p><%= link_to repo['html_url'], repo['html_url'] %> | fork: <%= repo['fork'] %></p>
+  </div>
+  
+
 <% end %>
