@@ -15,4 +15,3 @@ deploy:
   - rake db:migrate
   - rake db:seed
   - restart
-  - rake cleanup
