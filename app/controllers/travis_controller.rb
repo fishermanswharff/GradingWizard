@@ -11,7 +11,7 @@ class TravisController < ApplicationController
         PullRequest.create!({committer_name: payload['committer_name'], unique_id: payload['id'], name: env['HTTP_TRAVIS_REPO_SLUG'], build_status: payload['status'], status_message: payload['status_message'], build_url: payload['build_url'], commit_message: payload['message'], pull_request_number: payload['pull_request_number']})
       end
     end
-    render nothing: true
+    render :nothing => true
   end
 
   private
