@@ -2,7 +2,6 @@ require Rails.root.join('lib/modules/RepoGetter')
 class ReposController < ApplicationController
 
   def index
-    binding.pry
     @repos = Repo.get_repos
   end
 
